@@ -1,0 +1,19 @@
+<template>
+    <view class="page-404">
+       <div> test</div>
+    </view>
+</template>
+<script>
+import wepy from '@wepy/core';
+
+export default wepy.page({
+    data() {
+        return {};
+    },
+    computed: {},
+    methods: {},
+    created() {},
+});
+</script>
+<style lang="less">
+</style>

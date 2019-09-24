@@ -1,0 +1,26 @@
+{
+    "editor.tabSize": 4,
+    "extensions.ignoreRecommendations": true,
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    // "files.associations": { "*.wpy": "vue" },
+    "vetur.validation.template": false,
+    "eslint.options": {
+        "plugins": ["html"]
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+    "prettier.singleQuote": true,
+    "prettier.semi": true,
+    "vetur.format.defaultFormatter.html": "none",
+    "scss.lint.emptyRules": "ignore",
+    "vetur.format.defaultFormatterOptions": {
+        "wrap_attributes": "force-aligned"
+    },
+    "window.title": "${activeEditorMedium}",
+    "prettier.requireConfig": true,
+    // "prettier.eslintIntegration": true,
+    "svg.preview.background": "transparent",
+    "editor.formatOnPaste": true
+}
