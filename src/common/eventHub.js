@@ -1,5 +1,5 @@
 import Wepy from '@wepy/core';
 
-let eventHub = new Wepy();
+const eventHub = new Wepy();
 
 export default eventHub;

@@ -5,13 +5,15 @@
   "main": "weapp/app.js",
   "scripts": {
     "watch": " npx wepy build --watch",
-    "build": "rm -rf ./weapp && NODE_ENV=production npx wepy build --no-cache",
+    "build": "npm run clean && NODE_ENV=production npx wepy build --no-cache",
     "clean": "rm -rf ./weapp",
+    "clean:all": "rm -rf ./node_modules/ ./weapp/",
     "lint": "eslint ./src --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "@wepy/core": "^2.0.0-alpha.9",
     "@wepy/x": "^2.0.2",
     "miniprogram-slide-view": "0.0.4"

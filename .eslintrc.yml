@@ -10,8 +10,8 @@ env:
 extends: standard
 
 # required to lint *.wpy files
-# plugins:
-#     - html
+plugins:
+    - html
 settings:
     html/html-extensions:
         - '.html'
