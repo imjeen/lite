@@ -30,6 +30,9 @@ rules:
     # 未声明的变量
     no-undef:
         - error
+    prefer-const:
+        - warn
+        - destructuring: all
     # 分号（ ; semicolons）
     semi:
         - error

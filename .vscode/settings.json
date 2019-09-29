@@ -10,7 +10,12 @@
     "eslint.options": {
         "plugins": ["html"]
     },
-    "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        { "autoFix": true, "language": "vue" }
+    ],
     "prettier.singleQuote": true,
     "prettier.semi": true,
     "vetur.format.defaultFormatter.html": "none",
