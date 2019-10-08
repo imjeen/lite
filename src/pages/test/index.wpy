@@ -1,11 +1,11 @@
 <config>
 {
-    navigationBarTitleText: 'WePY 2.0 Feature Demo',
+    navigationBarTitleText: 'TEST: 仅用于调试开发',
     usingComponents: {
-      panel: '~@/components/panel',
-      counter: '~@/components/counter',
-      list: '~@/components/wepy-list',
-      group: '../components/group',
+      panel: './comp/panel',
+      counter: './comp/counter',
+      list: './comp/wepy-list',
+      group: './comp/group',
       "slide-view": "module:miniprogram-slide-view",
     }
 }
@@ -115,10 +115,10 @@
 
 <script>
 import wepy from '@wepy/core';
-import eventHub from '../common/eventHub';
+import eventHub from '@/common/eventHub';
 import { mapState } from '@wepy/x';
-import store from '../store';
-import testMixin from '../mixins/test';
+import store from '@/store';
+import testMixin from '@/mixins/test';
 
 export default wepy.page({
     store,

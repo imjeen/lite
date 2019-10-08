@@ -26,21 +26,23 @@
 </template>
 <script>
 import wepy from '@wepy/core';
-import store from '../store';
+import store from '@/store';
 import { mapState, mapActions } from '@wepy/x';
 
 wepy.component({
     store,
     props: {
         num: {
-            type: [Number, String],
+            type: Number,
             coerce: function(v) {
                 return +v;
             },
             default: 50,
         },
     },
-    computed: mapState(['counter']),
+    computed: {
+        ...mapState(['counter']),
+    },
 
     events: {
         'index-broadcast': (...args) => {

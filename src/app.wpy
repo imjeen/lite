@@ -1,7 +1,9 @@
 <config>
 {
     pages: [
-        'pages/test',
+        'pages/home/index',
+        'pages/share/full-body-shot',
+        'pages/test/index',
         'pages/404',
     ],
     window: {

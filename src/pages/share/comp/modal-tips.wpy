@@ -1,0 +1,48 @@
+<config>
+    {
+        usingComponents: {
+            'button-open': './button-open',
+        }
+    }
+</config>
+<template>
+    <div class="modal-wrap">
+        <div class="mask"></div>
+        <div class="content">
+            <p>即将离开微信，<br>打开‘美颜相机</p>
+            <button>取消</button>
+            <button-open />
+        </div>
+    </div>
+</template>
+<script>
+import wepy from '@wepy/core';
+export default wepy.component({
+    data: {},
+    computed: {},
+    methods: {},
+    created() {},
+});
+</script>
+<style lang="less">
+.modal-wrap {
+    .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        min-height: 100rpx;
+        min-width: 200rpx;
+        padding: 10rpx 20rpx;
+    }
+}
+</style>

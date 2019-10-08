@@ -1,0 +1,22 @@
+<template>
+    <button 
+        binderror="onError"
+        app-parameter="wechat"
+        open-type="launchApp">打开</button>
+</template>
+<script>
+import wepy from '@wepy/core';
+export default wepy.component({
+    props: {},
+    data: {},
+    computed: {},
+    methods: {
+        onError(e) {
+            console.log(e.detail.errMsg);
+        },
+    },
+    created() {},
+});
+</script>
+<style lang="less">
+</style>

@@ -1,0 +1,32 @@
+<config>
+    {
+        navigationBarTitleText: '全身照相馆',
+        usingComponents: {
+            loading: '~@/components/loading',
+            'modal-tips': './comp/modal-tips',
+        }
+    }
+</config>
+<template>
+    <view class="page-full-body-shot">
+        <app-button />
+        <loading :visible="loading" />
+        <modal-tips />
+    </view>
+</template>
+<script>
+import wepy from '@wepy/core';
+export default wepy.page({
+    data: {
+        loading: false,
+    },
+    computed: {},
+    methods: {},
+    created() {},
+});
+</script>
+<style lang="less">
+.page-full-body-shot {
+    width: 100%;
+}
+</style>

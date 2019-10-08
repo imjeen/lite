@@ -1,6 +1,6 @@
 [TOC]
 
-# Lite
+# Beauty Lite
 
 基于 [WePY 2](https://github.com/Tencent/wepy) (小程序组件化开发框架) 开发的一个微信小程序。
 
@@ -9,11 +9,11 @@
 开发步骤如下：
 
 1. `npm run watch` 进入监听模式
-2. 通过[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 进行调试
+2. 通过 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) 进行调试
 
 ## Build
 
-主要由cli 工具[@wepy/cli](https://github.com/Tencent/wepy/tree/2.0.x/packages/cli) 编译完成。
+主要由 [@wepy/cli](https://github.com/Tencent/wepy/tree/2.0.x/packages/cli) 工具编译完成。
 
 | 模式  | 命令  | 备注 |
 |---|---|---|
@@ -27,7 +27,7 @@
 
 ```mermaid
 sequenceDiagram
-编译 -->> 上传: 通过WePy编译
+编译 -->> 上传: 通过WePY编译
 上传 -->> 提测: 开发版本，体验版二维码
 Note left of 上传 : 通过微信开发工具<br/>上传，需填写版本号
 提测 -->> 提交审核: 审核版本 
@@ -36,9 +36,8 @@ Note left of 上传 : 通过微信开发工具<br/>上传，需填写版本号
 
 ## Format
 
-在保存代码之前，需格式化代码，可通过 VS code的快捷键【**Shift + Commnad + f**】 或 右击菜单的【格式化代码】选项执行。
-
-`npm run lint` 是用来检测代码预定的规范，保证代码的一致性，避免错误。
+- 格式化保存代码：可通过 VS code的快捷键【**Shift + Commnad + f**】 或 右击菜单的【格式化代码】选项执行，然后保存代码。
+- `npm run lint`：用来检测代码预定的规范，保证代码的一致性，避免错误。
 
 ## Test
 

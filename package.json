@@ -1,10 +1,10 @@
 {
-  "name": "lite",
-  "version": "0.0.2",
-  "description": "lite is a mini-program for weChat, and is a demo.",
+  "name": "beauty-lite",
+  "version": "0.0.1",
+  "description": "The Beauty Lite is a weChat mini-program with WePY2.",
   "main": "weapp/app.js",
   "scripts": {
-    "watch": " npx wepy build --watch",
+    "watch": " npm run clean && npx wepy build --watch",
     "build": "npm run clean && NODE_ENV=production npx wepy build --no-cache",
     "clean": "rm -rf ./weapp",
     "clean:all": "rm -rf ./node_modules/ ./weapp/",

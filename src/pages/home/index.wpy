@@ -1,0 +1,33 @@
+<config>
+    {
+        navigationBarTitleText: 'Beauty Lite',
+        usingComponents: {
+            loading: '~@/components/loading',
+        }
+    }
+</config>
+<template>
+    <view class="page-home">
+        <text class="title">Beauty Lite</text>
+    </view>
+</template>
+<script>
+import wepy from '@wepy/core';
+export default wepy.page({
+    data() {
+        return {};
+    },
+    computed: {},
+    methods: {},
+    created() {},
+});
+</script>
+<style lang="less">
+.page-home {
+    width: 100%;
+    .title{
+        display: block;
+        text-align: center;
+    }
+}
+</style>

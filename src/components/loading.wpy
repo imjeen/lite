@@ -1,0 +1,99 @@
+<template>
+    <view class="spin-wrap" :class="{'is-show': visible }">
+        <view class="spin">
+            <view class="circle-blue"/>
+            <view class="circle-red"/>
+        </view>
+    </view>
+</template>
+<script>
+import wepy from '@wepy/core';
+export default wepy.component({
+    props: {
+        visible: { type: Boolean, default: false },
+    },
+});
+</script>
+<style lang="less">
+@keyframes wrap {
+    to {
+        transform: rotate(1turn);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+@keyframes red {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes blue {
+    0% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
+}
+@center-diameter: 36rpx;
+@diameter: 48rpx;
+.spin-wrap {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: @diameter;
+    margin-left: -@diameter / 2;
+    overflow: visible;
+    animation: wrap 4s infinite linear;
+    &.is-show {
+        display: inline-block;
+    }
+    .spin {
+        display: inline-block;
+        height: @center-diameter;
+        width: @center-diameter;
+        position: relative;
+        margin: 0 auto;
+        animation: spin 2s infinite linear;
+        .circle-blue,
+        .circle-red {
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .circle-blue {
+            width: @diameter;
+            height: @diameter;
+            background: #4085fa;
+            left: @center-diameter - @diameter / 2;
+            top: @center-diameter / 2 - @diameter / 2;
+            animation: blue 2s infinite linear;
+        }
+        .circle-red {
+            width: @diameter;
+            height: @diameter;
+            background: #fd4965;
+            left: -@diameter / 2;
+            top: -(@diameter / 2 - @center-diameter / 2);
+            animation: red 2s infinite linear;
+        }
+    }
+}
+</style>
