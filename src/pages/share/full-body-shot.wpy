@@ -8,25 +8,83 @@
     }
 </config>
 <template>
-    <view class="page-full-body-shot">
-        <app-button />
-        <loading :visible="loading" />
-        <modal-tips />
+    <loading  v-if="loading"  :visible="loading"/>
+    <view v-else  class="page-full-body-shot">
+        <cover-view v-if="img_url">
+            <cover-image :src="img_url"></cover-image>
+        </cover-view>
+        <view v-else>
+            <image class="figure" src="https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png" mode="aspectFit" />
+        </view>
+        <button @tap="onOpenTips(true)">我也要拍</button>
+        <modal-tips 
+            v-if="visible"
+            :visible="visible" 
+            @update:visible="onOpenTips"
+        />
     </view>
 </template>
 <script>
 import wepy from '@wepy/core';
+const app = getApp();
+console.log('app =>', app);
 export default wepy.page({
     data: {
         loading: false,
+        visible: false,
+        img_url: '',
+        params: {
+            url: '',
+        },
     },
     computed: {},
-    methods: {},
-    created() {},
+    methods: {
+        onOpenTips(val) {
+            this.visible = val;
+        },
+        // -------------------
+        // Page: lifecycle hooks
+        onLoad(params) {
+            this.setData({
+                params,
+                img_url: decodeURIComponent(params.url || ''),
+            });
+        },
+        /*  onReady() {
+            wx.setNavigationBarTitle({
+                title: '全身照相馆',
+            });
+        }, */
+        onShow() {
+            console.log(this.route);
+        },
+        onShareAppMessage(res) {
+            if (res.from === 'button') {
+                // 来自页面内转发按钮
+                console.log(res.target);
+            }
+            const options = {
+                title: '全身照相馆',
+                path: `${this.route}?url=${encodeURIComponent(this.data.img_url)}&from=miniapp`,
+                imageUrl: '', // 5:4 比例展示
+            };
+            console.log(options);
+            return options;
+        },
+        // -------------------
+    },
+    created() {
+        console.log('created');
+    },
 });
 </script>
 <style lang="less">
 .page-full-body-shot {
     width: 100%;
+    .figure {
+        width: 750rpx;
+        height: 210rpx;
+        margin: 0 auto;
+    }
 }
 </style>

@@ -39,6 +39,13 @@ Note left of 上传 : 通过微信开发工具<br/>上传，需填写版本号
 - 格式化保存代码：可通过 VS code的快捷键【**Shift + Commnad + f**】 或 右击菜单的【格式化代码】选项执行，然后保存代码。
 - `npm run lint`：用来检测代码预定的规范，保证代码的一致性，避免错误。
 
+## Sinppets 
+
+适用用当前工作区的代码片段, 具体配置见：[./.vscode/wpy.code-snippets](./.vscode/wpy.code-snippets)
+
+- **wpy**: 创建 WePY page模板
+- **wpy_comp**: 创建 WePY 组件模板
+
 ## Test
 
 > ### TODO

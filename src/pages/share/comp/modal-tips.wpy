@@ -6,11 +6,11 @@
     }
 </config>
 <template>
-    <div class="modal-wrap">
+    <div class="modal-wrap" v-show="visible">
         <div class="mask"></div>
         <div class="content">
-            <p>即将离开微信，<br>打开‘美颜相机</p>
-            <button>取消</button>
+            <p>即将离开微信，<br>打开相机App</p>
+            <button @tap="onClose">取消</button>
             <button-open />
         </div>
     </div>
@@ -18,9 +18,22 @@
 <script>
 import wepy from '@wepy/core';
 export default wepy.component({
+    hooks: {
+        'before-setData'(dirty) {
+            console.log('dirty =>', dirty);
+        },
+    },
+    props: {
+        visible: { type: Boolean, default: false },
+    },
     data: {},
     computed: {},
-    methods: {},
+    methods: {
+        onClose() {
+            console.log('to close #4');
+            this.$emit('update:visible', false);
+        },
+    },
     created() {},
 });
 </script>
