@@ -18,11 +18,11 @@
 <script>
 import wepy from '@wepy/core';
 export default wepy.component({
-    hooks: {
+    /*  hooks: {
         'before-setData'(dirty) {
-            console.log('dirty =>', dirty);
-        },
+            console.log('#dirty =>', dirty);
     },
+    }, */
     props: {
         visible: { type: Boolean, default: false },
     },
@@ -30,7 +30,6 @@ export default wepy.component({
     computed: {},
     methods: {
         onClose() {
-            console.log('to close #4');
             this.$emit('update:visible', false);
         },
     },

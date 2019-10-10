@@ -26,8 +26,9 @@
 </template>
 <script>
 import wepy from '@wepy/core';
-const app = getApp();
-console.log('app =>', app);
+import stat from '@/utils/stat';
+console.log('stat =>', stat);
+
 export default wepy.page({
     data: {
         loading: false,

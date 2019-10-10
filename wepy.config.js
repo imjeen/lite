@@ -1,10 +1,12 @@
 const path = require('path');
-var prod = process.env.NODE_ENV === 'production';
+const DefinePlugin = require('@wepy/plugin-define');
+
+const IS_RELEASE = process.env.NODE_ENV === 'production';
 
 module.exports = {
     wpyExt: '.wpy',
     eslint: true,
-    cliLogs: !prod,
+    cliLogs: !IS_RELEASE,
     build: {},
     resolve: {
         alias: {
@@ -14,7 +16,7 @@ module.exports = {
     },
     compilers: {
         less: {
-            compress: prod,
+            compress: IS_RELEASE,
         },
         babel: {
             sourceMap: true,
@@ -22,7 +24,11 @@ module.exports = {
             plugins: ['@wepy/babel-plugin-import-regenerator'],
         },
     },
-    plugins: [],
+    plugins: [
+        DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        }),
+    ],
     appConfig: {
         noPromiseAPI: ['createSelectorQuery'],
     },

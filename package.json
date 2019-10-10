@@ -20,11 +20,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
     "@wepy/babel-plugin-import-regenerator": "0.0.2",
     "@wepy/cli": "^2.0.0-alpha.19",
     "@wepy/compiler-babel": "^2.0.1",
     "@wepy/compiler-less": "^2.0.1",
+    "@wepy/plugin-define": "^2.0.1",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",

@@ -2,7 +2,7 @@
 
 # Beauty Lite
 
-基于 [WePY 2](https://github.com/Tencent/wepy) (小程序组件化开发框架) 开发的一个微信小程序。
+美颜小程序：基于 [WePY 2](https://github.com/Tencent/wepy) (小程序组件化开发框架) 开发的一个微信小程序。
 
 ## Develop
 
@@ -45,6 +45,12 @@ Note left of 上传 : 通过微信开发工具<br/>上传，需填写版本号
 
 - **wpy**: 创建 WePY page模板
 - **wpy_comp**: 创建 WePY 组件模板
+
+## Stat
+
+| 平台 | 名称  | App Key  | 备注 |
+|---|---|---|---|
+| [阿拉丁统计](https://tongji.aldwx.com) | 美颜相机小程序 |`TODO` | [SDK文档](http://doc.aldwx.com/aldwx/) |
 
 ## Test
 

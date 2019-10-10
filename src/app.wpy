@@ -20,7 +20,7 @@ import '@babel/polyfill';
 import wepy from '@wepy/core';
 import bus from './common/bus';
 import vuex from '@wepy/x';
-// import './utils/sdk/ald-stat';
+import './utils/sdk/ald-stat';
 
 wepy.use(vuex);
 
