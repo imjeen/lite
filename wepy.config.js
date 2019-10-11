@@ -1,5 +1,7 @@
 const path = require('path');
+const LessPluginAutoPrefix = require('less-plugin-autoprefix');
 const DefinePlugin = require('@wepy/plugin-define');
+const PluginUglifyjs = require('@wepy/plugin-uglifyjs');
 
 const IS_RELEASE = process.env.NODE_ENV === 'production';
 
@@ -17,6 +19,7 @@ module.exports = {
     compilers: {
         less: {
             compress: IS_RELEASE,
+            plugins: [new LessPluginAutoPrefix({ browsers: ['Android >= 4.2', 'Chrome > 40', 'iOS >= 6'] })],
         },
         babel: {
             sourceMap: true,
@@ -33,3 +36,14 @@ module.exports = {
         noPromiseAPI: ['createSelectorQuery'],
     },
 };
+
+if (IS_RELEASE) {
+    module.exports.plugins = module.exports.plugins.concat([
+        PluginUglifyjs({
+            compress: true,
+            output: {
+                comments: false,
+            },
+        }),
+    ]);
+}

@@ -19,6 +19,7 @@
 |---|---|---|
 | 监听 | `npm run watch` | -- |
 | 构建 | `npm run build` | -- |
+| 构建 | `npm run build:test` | 不压缩JS和CSS等资源 |
 
 ## Deploy
 
@@ -50,7 +51,7 @@ Note left of 上传 : 通过微信开发工具<br/>上传，需填写版本号
 
 | 平台 | 名称  | App Key  | 备注 |
 |---|---|---|---|
-| [阿拉丁统计](https://tongji.aldwx.com) | 美颜相机小程序 |`TODO` | [SDK文档](http://doc.aldwx.com/aldwx/) |
+| [阿拉丁统计](https://tongji.aldwx.com) | Lite |`TODO` | [SDK文档](http://doc.aldwx.com/aldwx/) |
 
 ## Test
 

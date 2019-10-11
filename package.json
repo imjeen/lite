@@ -5,7 +5,9 @@
   "main": "weapp/app.js",
   "scripts": {
     "watch": " npm run clean && npx wepy build --watch",
-    "build": "npm run clean && NODE_ENV=production npx wepy build --no-cache",
+    "__build__": "npm run clean && npx wepy build --no-cache",
+    "build:test": "NODE_ENV=test npm run __build__",
+    "build": "NODE_ENV=production npm run __build__",
     "clean": "rm -rf ./weapp",
     "clean:all": "rm -rf ./node_modules/ ./weapp/",
     "lint": "eslint ./src --fix",
@@ -26,6 +28,7 @@
     "@wepy/compiler-babel": "^2.0.1",
     "@wepy/compiler-less": "^2.0.1",
     "@wepy/plugin-define": "^2.0.1",
+    "@wepy/plugin-uglifyjs": "0.0.2",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
@@ -36,6 +39,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglify-js": "^3.6.1",
     "wepy-eslint": "^1.5.3"
   }
 }
